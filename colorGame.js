@@ -85,6 +85,9 @@ reset.addEventListener("click", () => {
 	//reset the color of the header
 	h1.style.backgroundColor = "steelblue";
 
+	//change the button from "Play Again?" to "New Colors"
+	reset.textContent = "New Colors";
+
 	//run through the same logic again
 	fillUpSquares();
 
@@ -116,7 +119,7 @@ easyButton.addEventListener("click", () => {
 
 	colorDisplay.textContent = pickedColor;
 
-	h1.style.backgroundColor = "#232323";
+	h1.style.backgroundColor = "steelblue";
 
 	fillUpSquares();
 
@@ -140,7 +143,7 @@ hardButton.addEventListener("click", () => {
 
 	colorDisplay.textContent = pickedColor;
 
-	h1.style.backgroundColor = "#232323";
+	h1.style.backgroundColor = "steelblue";
 
 	fillUpSquares();
 
