@@ -1,11 +1,20 @@
 body {
 	background-color: #232323;
+	margin: 0px;
+	font-family: "Montserrat", "Avenir";
 }
 
 h1 {
 	color: white;
 	font-size: 40px;
 	text-align: center;
+	background-color: steelblue;
+	margin: 0px;
+	font-weight: normal;
+	text-transform: uppercase;
+	line-height: 1.1;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .square {
@@ -14,6 +23,10 @@ h1 {
 	padding-bottom: 30%;
 	float: left;
 	margin: 1.66%;
+	border-radius: 15%;
+	transition: background 0.5s;
+	-webkit-transition: background 0.5s; /*browser prefix for Safari*/
+	-moz-transition: background 0.5s; /*browser prefix for FireFox*/
 }
 
 .container {
@@ -28,9 +41,39 @@ h1 {
 }
 
 .selected {
-	background-color: yellow;
+	background-color: steelblue;
+	color: #fff;
 }
 
 .hide {
 	display: none;
+}
+
+#colorDisplay {
+	font-size: 150%;
+}
+
+button {
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	height: 100%;
+	font-weight: 700;
+	color: steelblue;
+	letter-spacing: 1px;
+	font-size: inherit; /* similar to font-size: 100% */
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s; /*browser prefix for Safari*/
+	-moz-transition: all 0.3s; /*browser prefix for FireFox*/
+}
+}
+
+button:hover {
+	background-color: steelblue;
+	color: #fff;
+}
+
+#message {
+	display: inline-block; /* similar to display:inline but you can give it width and height */
+	width: 20%;
 }

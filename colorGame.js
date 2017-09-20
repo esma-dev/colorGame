@@ -83,7 +83,7 @@ reset.addEventListener("click", () => {
 	colorDisplay.textContent = pickedColor;
 
 	//reset the color of the header
-	h1.style.backgroundColor = "#232323";
+	h1.style.backgroundColor = "steelblue";
 
 	//run through the same logic again
 	fillUpSquares();
