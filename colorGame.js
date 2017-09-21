@@ -4,6 +4,7 @@ let colors = [];
 
 let changeColors = (color) => {
 	//loop through all squares and change color to color input
+	//for making all squares have the same color when user selects correct color
 	for (let i = 0; i < squares.length; i++) {
 		squares[i].style.backgroundColor = color;
 	}
@@ -63,6 +64,22 @@ fillUpSquares();
 
 //Reset Button
 
+const resetInterface = () => {
+	//pick a new random color
+	pickedColor = pickColor();
+
+	//change the color display
+	colorDisplay.textContent = pickedColor;
+
+	//reset the color of the header
+	h1.style.backgroundColor = "steelblue";
+
+	fillUpSquares();
+
+	//change message to empty string
+	message.textContent = "";
+};
+
 let reset = document.querySelector("#reset");
 
 reset.addEventListener("click", () => {
@@ -72,27 +89,11 @@ reset.addEventListener("click", () => {
 	colors = [];
 	let numOfColorsToGenerate = (currMode === 'hard' ? 6 : 3);
 	generateRandomColors(numOfColorsToGenerate);
-	// console.log('AFTER: ', colors);
-
-	//pick a new random color
-	// console.log('BEFORE: ', pickedColor);
-	pickedColor = pickColor();
-	// console.log('AFTER: ', pickedColor);
-
-	//change the color display
-	colorDisplay.textContent = pickedColor;
-
-	//reset the color of the header
-	h1.style.backgroundColor = "steelblue";
 
 	//change the button from "Play Again?" to "New Colors"
 	reset.textContent = "New Colors";
 
-	//run through the same logic again
-	fillUpSquares();
-
-	//change message to empty string
-	message.textContent = "";
+	resetInterface();
 });
 
 //============================================================================================================
@@ -115,16 +116,7 @@ easyButton.addEventListener("click", () => {
 	colors = [];
 	generateRandomColors(3);
 
-	pickedColor = pickColor();
-
-	colorDisplay.textContent = pickedColor;
-
-	h1.style.backgroundColor = "steelblue";
-
-	fillUpSquares();
-
-	message.textContent = "";
-
+	resetInterface();
 });
 
 hardButton.addEventListener("click", () => {
@@ -139,15 +131,5 @@ hardButton.addEventListener("click", () => {
 	colors = [];
 	generateRandomColors(6);
 
-		pickedColor = pickColor();
-
-	colorDisplay.textContent = pickedColor;
-
-	h1.style.backgroundColor = "steelblue";
-
-	fillUpSquares();
-
-	message.textContent = "";
+	resetInterface();
 });
-
-

@@ -74,6 +74,6 @@ button:hover {
 }
 
 #message {
-	display: inline-block; /* similar to display:inline but you can give it width and height */
+	display: inline-block;  /*similar to display:inline but you can give it width and height */
 	width: 20%;
 }
